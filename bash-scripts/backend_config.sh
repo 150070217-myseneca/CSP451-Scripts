@@ -57,11 +57,11 @@ SECURITY_TYPE="Standard"
 
 # ---------------------------------------------------
 # Static IP setting
-Static_IP_LR="192.168.$ID.36"
-Static__IP_WS="172.17.$ID.36"
-Static_IP_LS="172.17.$ID.37"
-dummy_IP_1="172.17.$ID.41"
-dummy_IP_2="172.17.$ID.42"
+Static_IP_LR="192.168.$ID.4"
+Static__IP_WS="172.17.$ID.4"
+Static_IP_LS="172.17.$ID.5"
+dummy_IP_1="172.17.$ID.10"
+dummy_IP_2="172.17.$ID.11"
 
 # ---------------------------------------------------
 # DNS Configuration 
