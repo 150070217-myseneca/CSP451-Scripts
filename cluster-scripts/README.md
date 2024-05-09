@@ -1,7 +1,6 @@
-# Multi Tier App with Docker
+# Azure Host & Client VM Provisioning for Multi Tier App with Docker
 
-```bash
-
+```
  .d8888b.   .d8888b.  8888888b.     d8888  888888888  d888
 d88P  Y88b d88P  Y88b 888   Y88b   d8P888  888       d8888
 888    888 Y88b.      888    888  d8P 888  888         888
