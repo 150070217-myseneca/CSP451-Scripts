@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: app
+  labels:
+    app: employee
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employee
+  template:
+    metadata:
+      labels:
+        app: employee
+    spec:
+      containers:
+      - name: app-deployment
+        image: 277875007842.dkr.ecr.us-east-1.amazonaws.com/my-app:v0.2
+        env:
+        - name: DBHOST
+          value: "db-service.db.svc.cluster.local"
+        - name: DBPORT
+          value: "3306"
+        - name: DATABASE
+          value: "employees"
+        - name: DBPWD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials
+              key: password
+        - name: DBUSER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials
+              key: user
+        - name: APP_COLOR
+          value: "blue"
+        ports:
+        - containerPort: 8080
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysql-replicaset
+  namespace: db
+  labels:
+    appdb: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appdb: mysql
+  template:
+    metadata:
+      labels:
+        appdb: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: docker.io/library/my-db:v1.0
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-credentials
+                key: password
+        ports:
+          - containerPort: 3306
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
