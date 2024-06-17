@@ -41,12 +41,12 @@ do
     if [[ $(az image list -g $RG_NAME -o tsv --query "[?name=='$image_name']") ]]
     then
         echo "exists!"
-        echo "Do you want to delete image: $image_name? (yes/no)"
-        read -r answer
-        if [[ "$answer" == "yes" ]]; then
+        # echo "Do you want to delete image: $image_name? (yes/no)"
+        # read -r answer
+        # if [[ "$answer" == "yes" ]]; then
             echo "Deleting Image: $image_name"
             az image delete -g $RG_NAME --name $image_name 
-        fi
+        # fi
     fi
 done
 

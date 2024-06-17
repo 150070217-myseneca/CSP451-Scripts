@@ -20,7 +20,7 @@ else
    echo "doesn't exist!"
    echo "Do you want to create $vnet: $address_prefix? (yes/no)"
    read -r answer
-   if [[ "$answer" == "y" ]]; then
+   if [[ "$answer" == "yes" ]]; then
       echo "Creating VNET ---"
       az network vnet create -g $RG_NAME \
             --name $vnet \
@@ -35,33 +35,37 @@ else
          echo "Failed resource creation, program will abort now!!"
          exit 3
       fi
-      echo
-      echo "Do you want to create subnets for $vnet: $address_prefix? (yes/no)"
-      read -r answer
-      if [[ "$answer" == "y" ]]; then
-         echo
-         echo "Creating Subnets ---"
-         for item in "${subnet_list[@]}"
-         do
-            if [[ ${item:0:2} == "SN" ]]
-            then
-               subnet_name=$item
-            else
-               address_prefix=$item
+   fi
+fi
+echo
+echo "---------------------------------------------------"
+echo "Subnets: $vnet: $address_prefix"
+echo "---------------------------------------------------"
+echo
+for item in "${subnet_list[@]}"
+   do
+      if [[ ${item:0:2} == "SN" ]]
+      then
+         subnet_name=$item
+      else
+         subnet_prefix=$item
+         echo "Check if subnet $subnet_name: $subnet_prefix already exists ---"
+         if [[ $(az network vnet subnet list -g $RG_NAME --vnet-name $vnet -o tsv --query "[?name=='$subnet_name']") ]]
+         then
+            echo "exists!"
+            az network vnet subnet show -g $RG_NAME --vnet-name $vnet --name $subnet_name -o tsv --query id 
+         else
+            echo "doesn't exist!"
+            echo "Do you want to create subnets for $vnet: $subnet_prefix? (yes/no)"
+            read -r answer
+            if [[ "$answer" == "yes" ]]; then
                echo
-               echo "Check if subnet $subnet_name: $subnet_prefix already exists ---"
+               echo "Creating Subnet ---"
+               az network vnet subnet create --name $subnet_name \
+                     -g $RG_NAME \
+                     --vnet-name $vnet \
+                     --address-prefix $subnet_prefix
                if [[ $(az network vnet subnet list -g $RG_NAME --vnet-name $vnet -o tsv --query "[?name=='$subnet_name']") ]]
-               then
-                  echo "exists!"
-                  az network vnet subnet show -g $RG_NAME --vnet-name $vnet --name $subnet_name -o tsv --query id 
-               else
-                  echo "doesn't exist!"
-                  echo "Creating Subnet ---"
-                  az network vnet subnet create --name $subnet_name \
-                        -g $RG_NAME \
-                        --vnet-name $vnet \
-                        --address-prefix $address_prefix
-                  if [[ $(az network vnet subnet list -g $RG_NAME --vnet-name $vnet -o tsv --query "[?name=='$subnet_name']") ]]
                      then
                         echo "Completed!"
                         echo "Created with id:"
@@ -69,13 +73,11 @@ else
                      else
                         echo "Failed resource creation, program will abort now!!"
                         exit 3
-                  fi
                fi
             fi
-         done
+         fi
       fi
-   fi
-fi
+done
 
 vnet=$Server_vnet_name
 address_prefix=$Server_vnet_address
@@ -94,7 +96,7 @@ else
    echo "doesn't exist!"
    echo "Do you want to create $vnet: $address_prefix? (yes/no)"
    read -r answer
-   if [[ "$answer" == "y" ]]; then
+   if [[ "$answer" == "yes" ]]; then
       echo "Creating VNET ---"
       az network vnet create -g $RG_NAME \
             --name $vnet \
@@ -109,33 +111,37 @@ else
          echo "Failed resource creation, program will abort now!!"
          exit 3
       fi
-      echo
-      echo "Do you want to create subnets for $vnet: $address_prefix? (yes/no)"
-      read -r answer
-      if [[ "$answer" == "y" ]]; then
-         echo
-         echo "Creating Subnets ---"
-         for item in "${subnet_list[@]}"
-         do
-            if [[ ${item:0:2} == "SN" ]]
-            then
-               subnet_name=$item
-            else
-               address_prefix=$item
+   fi
+fi
+echo
+echo "---------------------------------------------------"
+echo "Subnets: $vnet: $address_prefix"
+echo "---------------------------------------------------"
+echo
+for item in "${subnet_list[@]}"
+   do
+      if [[ ${item:0:2} == "SN" ]]
+      then
+         subnet_name=$item
+      else
+         subnet_prefix=$item
+         echo "Check if subnet $subnet_name: $subnet_prefix already exists ---"
+         if [[ $(az network vnet subnet list -g $RG_NAME --vnet-name $vnet -o tsv --query "[?name=='$subnet_name']") ]]
+         then
+            echo "exists!"
+            az network vnet subnet show -g $RG_NAME --vnet-name $vnet --name $subnet_name -o tsv --query id 
+         else
+            echo "doesn't exist!"
+            echo "Do you want to create subnets for $vnet: $subnet_prefix? (yes/no)"
+            read -r answer
+            if [[ "$answer" == "yes" ]]; then
                echo
-               echo "Check if subnet $subnet_name: $subnet_prefix already exists ---"
+               echo "Creating Subnet ---"
+               az network vnet subnet create --name $subnet_name \
+                     -g $RG_NAME \
+                     --vnet-name $vnet \
+                     --address-prefix $subnet_prefix
                if [[ $(az network vnet subnet list -g $RG_NAME --vnet-name $vnet -o tsv --query "[?name=='$subnet_name']") ]]
-               then
-                  echo "exists!"
-                  az network vnet subnet show -g $RG_NAME --vnet-name $vnet --name $subnet_name -o tsv --query id 
-               else
-                  echo "doesn't exist!"
-                  echo "Creating Subnet ---"
-                  az network vnet subnet create --name $subnet_name \
-                        -g $RG_NAME \
-                        --vnet-name $vnet \
-                        --address-prefix $address_prefix
-                  if [[ $(az network vnet subnet list -g $RG_NAME --vnet-name $vnet -o tsv --query "[?name=='$subnet_name']") ]]
                      then
                         echo "Completed!"
                         echo "Created with id:"
@@ -143,13 +149,11 @@ else
                      else
                         echo "Failed resource creation, program will abort now!!"
                         exit 3
-                  fi
                fi
             fi
-         done
+         fi
       fi
-   fi
-fi
+done
 
 echo
 echo "---------------------------------------------------"
@@ -180,7 +184,7 @@ echo
 echo "---------------------------------------------------"
 echo "Do you want to create VNET Peerings? (yes/no)"
 read -r answer
-   if [[ "$answer" == "y" ]]; then
+   if [[ "$answer" == "yes" ]]; then
       echo "Creating VNET Peering using IDs"
       echo
       az network vnet peering create -g $RG_NAME \
