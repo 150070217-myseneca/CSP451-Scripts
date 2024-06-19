@@ -1,4 +1,4 @@
-# Azure Resources Managements Scripts
+# Bash Scripts (CLI)
 
 ```
  .d8888b.   .d8888b.  8888888b.     d8888  888888888  d888
