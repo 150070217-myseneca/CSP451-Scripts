@@ -11,11 +11,9 @@ Scripts and codes - CSP451 Computer Systems Project
 
 ## Part A - Creating Network Resources using Azure CLI
 
-![Azure Logo](https://upload.wikimedia.org/wikipedia/commons/6/66/Microsoft_Azure_Logo.png "Azure Logo")
-
 ### network_config.sh
 
-- [network_config.sh](scripts/network_config.sh) - Script for configuring network resources in Azure.
+- [network_config.sh](bash-scripts/network_config.sh) - Script for configuring network resources in Azure.
 - [network_setup.sh](scripts/network_setup.sh) - Script for setting up virtual networks and subnets.
 - [route_table_setup.sh](scripts/route_table_setup.sh) - Script for creating route tables and routes.
 
