@@ -6,14 +6,14 @@ source  ./logo_csp451.sh
 # Update the lines that are specific to your network 
 # /////////////////////////////////////////////////////////////
 
-RG_NAME=""
-LOCATION=""
-ID=""
+RG_NAME="Student-RG-1344553"
+LOCATION="canadacentral"
+ID="11"
 
-Student_vnet_name=""
-Student_vnet_address=""
-Client_Subnet_name=""
-Client_Subnet_address=""
+Student_vnet_name="Student-1344553-vnet"
+Student_vnet_address="10.1.0.0/16"
+Client_Subnet_name="Virtual-Desktop-Client"
+Client_Subnet_address="10.1.1.0/24"
 
 # ---------------------------------------------------
 # Networking - Virtual Networks
