@@ -229,3 +229,41 @@ az network nsg list --output table > nsg_list.tbl
 #### 5. For `auto shutdown configuration` is it possible to configure auto shutdown while you are creating the VM?
 
 - Yes, it is possible to configure auto-shutdown while creating a VM in Azure using Azure Resource Manager (ARM) templates, PowerShell scripts, Azure CLI commands, or through the Azure portal. This capability allows you to specify the auto-shutdown schedule during the initial VM creation process
+
+
+## Part D - Creating Custome Images from VMs using Azure CLI
+
+#### 1. What is the difference between the script that creates a VM from Azure Generic Image and Custome Image?
+
+- Image Source (--image parameter):
+
+    - Custom Image Script: Uses a dynamically constructed image name ($image_name) based on the VM name and a target version.
+    - Generic Image Script: Specifies a predefined image name ($VM_IMG_WC, $VM_IMG_WS, etc.) for each VM.
+
+- VM Creation Logic:
+
+    - Both scripts check if the VM already exists before attempting to create it, ensuring no duplicate VMs are created unintentionally.
+    - Custom Image Script: Additionally retrieves the image ID ($image_id) and displays VM creation status.
+
+These differences highlight how each script manages the image source and creation process, catering to specific needs for customizing VM creation from Azure images.
+
+
+#### 2. What is the usage suggestion?
+
+---------------------------------------------------
+target_version parameter not provided
+Usage: ./image_create.sh <target_version>
+---------------------------------------------------
+
+#### 3. How can you parallelize the process?
+
+- To parallelize the creation of custom images in script, we can modify the function calls to run asynchronously in the background.
+
+- [custom_image_create.sh](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/bash-scripts/custom_image_create.sh) - Script for custom image creation in Azure.
+
+- Each call to custom_image_create is followed by & which puts the function call in the background.
+- The wait command is used to wait for all background jobs to finish before proceeding to list the images.
+
+#### 4. The output format to table format
+
+- [Custome Images Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/custom_images_table.tbl) - .tbl file
