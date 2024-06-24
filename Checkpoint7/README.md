@@ -267,3 +267,55 @@ These differences highlight how each script manages the image source and creatio
 #### 4. The output format to table format
 
 - [Custome Images Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/custom_images_table.tbl) - .tbl file
+
+#### 4. Which ones are empty?
+
+- [VM Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/vm_table.tbl) - .tbl file
+- [NSG Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/nsg_table.tbl  ) - .tbl file
+- [NIC Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/nic_table.tbl) - .tbl file
+- [Disks Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/disk_table.tbl) - .tbl file
+- [Custome Images Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/custom_images_table.tbl) - .tbl file
+
+#### * Nothing in empty
+
+## Part E - Clean Up your Environment using Azure CLI
+
+#### 1. Deleting all your VMs.
+
+ **Confirm VM Deletion:**
+
+   - After executing the deletion command, verify using the Azure CLI command:
+     ```bash
+     az vm list --output table > delete_vm_list.tbl
+     ```
+     This command lists all VMs currently present in the Azure subscription in a table format.
+
+   - If the output shows no VMs, it confirms that all VMs have been successfully deleted.
+
+   - - [Deleted VM Table]() - .tbl file
+
+- By following these steps, you can ensure that all VMs are deleted from your Azure subscription and verify their deletion using Azure CLI commands.
+
+
+#### 2. Why are you not asked to delete Custome Images?
+
+ **Difference in Cost Implications**
+
+   - VMs have active OS disks that contribute significantly to compute costs. These costs include CPU, memory, and associated Azure services while the VM is running.
+
+   - Custom Images, on the other hand, are essentially dormant snapshots stored as VHDs. They incur minimal storage costs for their existence but do not consume compute resources or contribute to ongoing costs related to VM runtime.
+
+
+#### 3. What are the cost implications of NSG or NIC? Why are you deleting them?
+
+#### NSGs (Network Security Groups):
+- Costs: NSGs themselves do not incur direct costs. They are logical containers for inbound and outbound security rules that filter network traffic to and from Azure resources.
+- Impact: While NSGs do not have direct costs associated with their existence, misconfigured or overly complex NSG rules can lead to inefficient network traffic handling or increased troubleshooting efforts, indirectly impacting operational costs.
+#### NICs (Network Interface Cards):
+- Costs: NICs in Azure VMs typically do not incur separate costs on their own. They are part of the VM's configuration and are billed as part of the VM's compute resources.
+- Impact: However, unused or orphaned NICs can complicate network management and auditing processes. Properly managing NICs ensures efficient use of Azure networking resources and reduces potential security risks from misconfiguration or unauthorized access.
+
+
+#### 4. Why are you not deleting the Network backend like VNET and Route-Tables?
+
+- Network backends like VNETs and Route Tables are critical components of Azure infrastructure, supporting connectivity and functionality for various resources. While they are not typically deleted outright due to their foundational role and dependencies, proactive management, regular review, and optimization are key to maintaining a secure, efficient, and well-managed Azure environment.
