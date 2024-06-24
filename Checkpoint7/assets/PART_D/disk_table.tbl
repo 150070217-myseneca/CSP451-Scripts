@@ -1,0 +1,6 @@
+Name                                             ResourceGroup       Location       Zones    Sku              OsType    SizeGb    ProvisioningState
+-----------------------------------------------  ------------------  -------------  -------  ---------------  --------  --------  -------------------
+LR-11_OsDisk_1_264be2c71ead4171941b9e0a030ece51  STUDENT-RG-1344553  canadacentral           Premium_LRS      Linux     30        Succeeded
+LS-11_disk1_02d41fde33a34b6d8e0020964c8346f9     STUDENT-RG-1344553  canadacentral           Premium_LRS      Linux     30        Succeeded
+WC-11_OsDisk_1_90846aca91914e928733cc3a0b7fa589  STUDENT-RG-1344553  canadacentral           StandardSSD_LRS  Windows   127       Succeeded
+WS-11_OsDisk_1_ffb7a496b0ee4b4980d562e3a61ec368  STUDENT-RG-1344553  canadacentral           StandardSSD_LRS  Windows   127       Succeeded

@@ -1,0 +1,8 @@
+Location       Name       ProvisioningState    ResourceGroup       ResourceGuid
+-------------  ---------  -------------------  ------------------  ------------------------------------
+canadacentral  LR-11NSG   Succeeded            Student-RG-1344553  d9b17e38-af74-442e-ad42-e7c460f35d6d
+canadacentral  LR-NSG-11  Succeeded            Student-RG-1344553  3a2dac8c-436e-431f-b11e-6c1c727c0fa3
+canadacentral  LS-11NSG   Succeeded            Student-RG-1344553  8fb6e6c1-7c60-40e1-840b-791f7d3cf2b6
+canadacentral  LS-NSG-11  Succeeded            Student-RG-1344553  91c19df9-8a32-4872-a0e7-f9d8cc463ab8
+canadacentral  WC-NSG-11  Succeeded            Student-RG-1344553  fb6eca50-753e-4bb5-af64-9c1b7fc53d63
+canadacentral  WS-NSG-11  Succeeded            Student-RG-1344553  013edf2d-702d-4871-87c3-8e2fa774e22c
