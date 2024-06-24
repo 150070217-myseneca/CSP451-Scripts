@@ -268,7 +268,7 @@ These differences highlight how each script manages the image source and creatio
 
 - [Custome Images Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/custom_images_table.tbl) - .tbl file
 
-#### 4. Which ones are empty?
+#### 6. Which ones are empty?
 
 - [VM Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/vm_table.tbl) - .tbl file
 - [NSG Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_D/nsg_table.tbl  ) - .tbl file
