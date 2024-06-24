@@ -149,7 +149,7 @@ az network vnet subnet create \
 
 #### 1. List all VNETs using az network vnet list command
 
-- [VNETs](PART_B/vnet_list.json) - .json file
+- [VNETs](Checkpoint7/assets/PART_B/vnet_list.json) - .json file
 
 #### 2. Get the details of student vnet using az show
 
