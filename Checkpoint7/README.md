@@ -250,10 +250,10 @@ These differences highlight how each script manages the image source and creatio
 
 #### 2. What is the usage suggestion?
 
----------------------------------------------------
-target_version parameter not provided
-Usage: ./image_create.sh <target_version>
----------------------------------------------------
+  ---------------------------------------------------
+  target_version parameter not provided
+  Usage: ./image_create.sh <target_version>
+  ---------------------------------------------------
 
 #### 3. How can you parallelize the process?
 
