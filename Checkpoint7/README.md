@@ -46,7 +46,7 @@ Scripts and codes - CSP451 Computer Systems Project
 
 ## Answers to the questions for this section
 
-### 1. What does if [[ ! $(az group list -o tsv --query "[?name=='$RG_NAME']") ]] do? Explain your answer.
+#### 1. What does if [[ ! $(az group list -o tsv --query "[?name=='$RG_NAME']") ]] do? Explain your answer.
 
 #### Command Breakdown
 
@@ -72,7 +72,7 @@ Scripts and codes - CSP451 Computer Systems Project
   - The `[[ ! ... ]]` test will be true in this case, leading to the script printing a message that the resource group doesn't exist and aborting with an exit status of 3.
   - If the resource group does exist, the script will print a message indicating that the resource group exists and then list all resource groups in a table format.
 
-### 2. Why is it Crucial to Check if a Resource Exists Before Creating it?
+#### 2. Why is it Crucial to Check if a Resource Exists Before Creating it?
 
 Checking if a resource exists before creating it is crucial for several reasons:
 
@@ -94,10 +94,10 @@ else
 ```
 
 
-### 3. What is the Azure CLI command to create vnet?
+#### 3. What is the Azure CLI command to create vnet?
 
 #### Command Breakdown
-To create a virtual network (VNet) in Azure using the Azure CLI, you can use the `az network vnet create` command. Below is the specific command according to the given environment and unique ID configuration.
+- To create a virtual network (VNet) in Azure using the Azure CLI, you can use the `az network vnet create` command. Below is the specific command according to the given environment and unique ID configuration.
 
 #### Specific Command
 ```bash
@@ -120,7 +120,7 @@ az network vnet create -g $RG_NAME \
 - `--ddos-protection`: Specifies if DDoS protection is enabled for the VNet. Default is false.
 - `--vm-protection`: Specifies if VM protection is enabled for the VNet. Default is false.
 
-### 4. What is the Azure CLI command to create a subnet?
+#### 4. What is the Azure CLI command to create a subnet?
 
 #### Command
 ```bash
@@ -147,19 +147,19 @@ az network vnet subnet create \
 
 ## Part B - Working with Azure CLI Bash
 
-### 1. List all VNETs using az network vnet list command
+#### 1. List all VNETs using az network vnet list command
 
 - [VNETs](PART_B/vnet_list.json) - .json file
 
-### 2. Get the details of student vnet using az show
+#### 2. Get the details of student vnet using az show
 
 - [Student_vnet](PART_B/student_vnet.json) - .json file
 
-### 3. List all peerings using az network vnet
+#### 3. List all peerings using az network vnet
 
 - [Student_vnet](PART_B/peerings.tbl) - .tbl file
 
-### 4. Get the details of Router-11 subnet SN1 using az show
+#### 4. Get the details of Router-11 subnet SN1 using az show
 ```bash
 az network vnet subnet show --resource-group Student-RG-1344553 --vnet-name Router-11 --name SN1 --query '{Name: name, AddressPrefix: addressPrefix, RouteTable: routeTable.id}' -o json
 ```
@@ -172,16 +172,60 @@ az network vnet subnet show --resource-group Student-RG-1344553 --vnet-name Rout
 }
 ```
 
-### 5. List all routes in RT-11
+#### 5. List all routes in RT-11
 
 - [List of all routes in RT-11](PART_B/route_list.tbl) - .tbl file
 
-### 6. Get the details of route between Router-11 SN1 and Server-11 SN1
+#### 6. Get the details of route between Router-11 SN1 and Server-11 SN1
 
 - [Details of Route](PART_B/route_table_routes.json) - .json file
 
-### 7. What CLI command will show you which subnet is associated with which route in the route table?
+#### 7. What CLI command will show you which subnet is associated with which route in the route table?
 
 ```bash
 az network route-table route list --resource-group Student-RG-1344553 --route-table-name RT-11
 ```
+
+## Part C - Creating Virtual Machines using Azure CLI
+
+#### 1. List all VMs and send the output in table. What command did you use?
+
+- To list all VMs in the resource group `Student-RG-1344553` and save the output in table format to `vm_list.tbl`, use the following command:
+
+```bash
+az vm list --resource-group Student-RG-1344553 --output table > vm_list.tbl
+```
+
+- [vm_list](Checkpoint7/assets/PART_C/vm_list.tbl) - .tbl file
+
+
+#### 2. Get the details of `WC-11` using `az show` command and send the output. What command did you use?
+
+- To get the details of the virtual machine `WC-11` in the resource group `Student-RG-1344553` and save the output in JSON format to `WC-11-details.json`, use the following command:
+
+```bash
+az vm show --resource-group Student-RG-1344553 --name WC-11 --output json > WC-11-details.json
+```
+
+- [WC-11-details](Checkpoint7/assets/PART_C/WC-11-details.json) - .json file
+
+#### 3. List all NSG using `az list` command and send the output . What command did you use?
+
+- To list all Network Security Groups (NSGs) and save the output in table format to `nsg_list.tbl`, use the following command:
+
+```bash
+az network nsg list --output table > nsg_list.tbl
+```
+
+- [nsg_list](Checkpoint7/assets/PART_C/nsg_list.tbl) - .tbl file
+
+#### 4. What is the time-zone? What should be the correct time settings considering the time zone differences?
+
+- Standard Time (EST): 12:00 midnight EST corresponds to 05:00 UTC.
+- During Daylight Saving Time (EDT): Set the auto-shutdown time to 04:00 UTC. 
+
+![Screenshot of ``auto shutdown configuration``](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_C/Screenshot%20(700).png)
+
+#### 5. For `auto shutdown configuration` is it possible to configure auto shutdown while you are creating the VM?
+
+- Yes, it is possible to configure auto-shutdown while creating a VM in Azure using Azure Resource Manager (ARM) templates, PowerShell scripts, Azure CLI commands, or through the Azure portal. This capability allows you to specify the auto-shutdown schedule during the initial VM creation process
