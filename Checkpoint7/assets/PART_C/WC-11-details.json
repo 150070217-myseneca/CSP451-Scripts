@@ -1,0 +1,112 @@
+{
+  "additionalCapabilities": null,
+  "applicationProfile": null,
+  "availabilitySet": null,
+  "billingProfile": null,
+  "capacityReservation": null,
+  "diagnosticsProfile": null,
+  "etag": null,
+  "evictionPolicy": null,
+  "extendedLocation": null,
+  "extensionsTimeBudget": null,
+  "hardwareProfile": {
+    "vmSize": "Standard_B2s",
+    "vmSizeProperties": null
+  },
+  "host": null,
+  "hostGroup": null,
+  "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Compute/virtualMachines/WC-11",
+  "identity": null,
+  "instanceView": null,
+  "licenseType": null,
+  "location": "canadacentral",
+  "managedBy": null,
+  "name": "WC-11",
+  "networkProfile": {
+    "networkApiVersion": null,
+    "networkInterfaceConfigurations": null,
+    "networkInterfaces": [
+      {
+        "deleteOption": null,
+        "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/networkInterfaces/wc-11",
+        "primary": true,
+        "resourceGroup": "Student-RG-1344553"
+      }
+    ]
+  },
+  "osProfile": {
+    "adminPassword": null,
+    "adminUsername": "Student1344553",
+    "allowExtensionOperations": true,
+    "computerName": "WC-11",
+    "customData": null,
+    "linuxConfiguration": null,
+    "requireGuestProvisionSignal": true,
+    "secrets": [],
+    "windowsConfiguration": {
+      "additionalUnattendContent": null,
+      "enableAutomaticUpdates": true,
+      "enableVmAgentPlatformUpdates": null,
+      "patchSettings": {
+        "assessmentMode": "ImageDefault",
+        "automaticByPlatformSettings": null,
+        "enableHotpatching": null,
+        "patchMode": "AutomaticByOS"
+      },
+      "provisionVmAgent": true,
+      "timeZone": null,
+      "winRm": null
+    }
+  },
+  "plan": null,
+  "platformFaultDomain": null,
+  "priority": null,
+  "provisioningState": "Succeeded",
+  "proximityPlacementGroup": null,
+  "resourceGroup": "Student-RG-1344553",
+  "resources": null,
+  "scheduledEventsPolicy": null,
+  "scheduledEventsProfile": null,
+  "securityProfile": null,
+  "storageProfile": {
+    "dataDisks": [],
+    "diskControllerType": null,
+    "imageReference": {
+      "communityGalleryImageId": null,
+      "exactVersion": "19045.4529.240607",
+      "id": null,
+      "offer": "Windows-10",
+      "publisher": "MicrosoftWindowsDesktop",
+      "sharedGalleryImageId": null,
+      "sku": "win10-22h2-pro",
+      "version": "latest"
+    },
+    "osDisk": {
+      "caching": "ReadWrite",
+      "createOption": "FromImage",
+      "deleteOption": "Detach",
+      "diffDiskSettings": null,
+      "diskSizeGb": 127,
+      "encryptionSettings": null,
+      "image": null,
+      "managedDisk": {
+        "diskEncryptionSet": null,
+        "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Compute/disks/WC-11_disk1_dc7f419c2461418da406b9a22bf09b8f",
+        "resourceGroup": "Student-RG-1344553",
+        "securityProfile": null,
+        "storageAccountType": "StandardSSD_LRS"
+      },
+      "name": "WC-11_disk1_dc7f419c2461418da406b9a22bf09b8f",
+      "osType": "Windows",
+      "vhd": null,
+      "writeAcceleratorEnabled": null
+    }
+  },
+  "tags": {},
+  "timeCreated": "2024-06-24T07:52:07.511477+00:00",
+  "type": "Microsoft.Compute/virtualMachines",
+  "userData": null,
+  "virtualMachineScaleSet": null,
+  "vmId": "b698f771-3f82-4450-bc78-e6fea0a51b47",
+  "zones": null
+}

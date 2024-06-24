@@ -1,0 +1,103 @@
+[
+  {
+    "addressSpace": {
+      "addressPrefixes": [
+        "192.168.11.0/24"
+      ]
+    },
+    "enableDdosProtection": false,
+    "etag": "W/\"59afa4d5-0318-4e15-8baf-a8e904f11080\"",
+    "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/virtualNetworks/Router-11",
+    "location": "canadacentral",
+    "name": "Router-11",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "Student-RG-1344553",
+    "resourceGuid": "643a7f51-327f-4abb-a578-1d82e8db481d",
+    "subnets": [
+      {
+        "addressPrefix": "192.168.11.0/27",
+        "delegations": [],
+        "etag": "W/\"59afa4d5-0318-4e15-8baf-a8e904f11080\"",
+        "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/virtualNetworks/Router-11/subnets/SN1",
+        "name": "SN1",
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "Student-RG-1344553",
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      }
+    ],
+    "type": "Microsoft.Network/virtualNetworks",
+    "virtualNetworkPeerings": []
+  },
+  {
+    "addressSpace": {
+      "addressPrefixes": [
+        "172.17.11.0/24"
+      ]
+    },
+    "enableDdosProtection": false,
+    "etag": "W/\"5854e39c-009f-4c07-a353-985e4f45190d\"",
+    "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/virtualNetworks/Server-11",
+    "location": "canadacentral",
+    "name": "Server-11",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "Student-RG-1344553",
+    "resourceGuid": "bafbda17-bfec-45c2-9a0d-7e9a0f7da501",
+    "subnets": [
+      {
+        "addressPrefix": "172.17.11.0/24",
+        "delegations": [],
+        "etag": "W/\"5854e39c-009f-4c07-a353-985e4f45190d\"",
+        "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/virtualNetworks/Server-11/subnets/SN1",
+        "name": "SN1",
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "Student-RG-1344553",
+        "routeTable": {
+          "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/routeTables/RT-11",
+          "resourceGroup": "Student-RG-1344553"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      }
+    ],
+    "type": "Microsoft.Network/virtualNetworks",
+    "virtualNetworkPeerings": []
+  },
+  {
+    "addressSpace": {
+      "addressPrefixes": [
+        "10.1.0.0/16"
+      ]
+    },
+    "enableDdosProtection": false,
+    "etag": "W/\"325e9303-b060-4d4c-b9df-ce167be914ae\"",
+    "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/virtualNetworks/Student-1344553-vnet",
+    "location": "canadacentral",
+    "name": "Student-1344553-vnet",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "Student-RG-1344553",
+    "resourceGuid": "5b66a6ce-42e0-4d94-b41a-1180bec07e94",
+    "subnets": [
+      {
+        "addressPrefix": "10.1.1.0/24",
+        "delegations": [],
+        "etag": "W/\"325e9303-b060-4d4c-b9df-ce167be914ae\"",
+        "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/virtualNetworks/Student-1344553-vnet/subnets/Virtual-Desktop-Client",
+        "name": "Virtual-Desktop-Client",
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "Student-RG-1344553",
+        "routeTable": {
+          "id": "/subscriptions/7a55cf95-4c85-4bde-8a60-298d6b85d26d/resourceGroups/Student-RG-1344553/providers/Microsoft.Network/routeTables/RT-11",
+          "resourceGroup": "Student-RG-1344553"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      }
+    ],
+    "type": "Microsoft.Network/virtualNetworks",
+    "virtualNetworkPeerings": []
+  }
+]

@@ -20,9 +20,9 @@ do
 echo "---------------------------------------------------------------------"
 echo "Creating auto-shutdown schedule for: $vm_name"
 echo "---------------------------------------------------------------------"
-# read -r answer
-# if [[ "$answer" == "yes" ]]; then
+read -r answer
+if [[ "$answer" == "yes" ]]; then
     az vm auto-shutdown -g $RG_NAME -n $vm_name --time $shutdown_time
-# fi
+fi
 done
 
