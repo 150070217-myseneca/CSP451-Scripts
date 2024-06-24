@@ -292,7 +292,7 @@ These differences highlight how each script manages the image source and creatio
 
    - If the output shows no VMs, it confirms that all VMs have been successfully deleted.
 
-   - - [Deleted VM Table]() - .tbl file
+   - - [Deleted VM Table](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_E/delete_vm_table%20.tbl) - .tbl file
 
 - By following these steps, you can ensure that all VMs are deleted from your Azure subscription and verify their deletion using Azure CLI commands.
 
