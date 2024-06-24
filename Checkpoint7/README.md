@@ -153,11 +153,11 @@ az network vnet subnet create \
 
 #### 2. Get the details of student vnet using az show
 
-- [Student_vnet](PART_B/student_vnet.json) - .json file
+- [Student_vnet](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_B/student_vnet.json) - .json file
 
 #### 3. List all peerings using az network vnet
 
-- [Student_vnet](PART_B/peerings.tbl) - .tbl file
+- [Student_vnet](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_B/peerings.tbl) - .tbl file
 
 #### 4. Get the details of Router-11 subnet SN1 using az show
 ```bash
@@ -174,11 +174,11 @@ az network vnet subnet show --resource-group Student-RG-1344553 --vnet-name Rout
 
 #### 5. List all routes in RT-11
 
-- [List of all routes in RT-11](PART_B/route_list.tbl) - .tbl file
+- [List of all routes in RT-11](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_B/route_list.tbl) - .tbl file
 
 #### 6. Get the details of route between Router-11 SN1 and Server-11 SN1
 
-- [Details of Route](PART_B/route_table_routes.json) - .json file
+- [Details of Route](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_B/route_table_routes.json) - .json file
 
 #### 7. What CLI command will show you which subnet is associated with which route in the route table?
 
@@ -196,7 +196,7 @@ az network route-table route list --resource-group Student-RG-1344553 --route-ta
 az vm list --resource-group Student-RG-1344553 --output table > vm_list.tbl
 ```
 
-- [vm_list](Checkpoint7/assets/PART_C/vm_list.tbl) - .tbl file
+- [vm_list](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_C/vm_list.tbl) - .tbl file
 
 
 #### 2. Get the details of `WC-11` using `az show` command and send the output. What command did you use?
@@ -207,7 +207,7 @@ az vm list --resource-group Student-RG-1344553 --output table > vm_list.tbl
 az vm show --resource-group Student-RG-1344553 --name WC-11 --output json > WC-11-details.json
 ```
 
-- [WC-11-details](Checkpoint7/assets/PART_C/WC-11-details.json) - .json file
+- [WC-11-details](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_C/WC-11-details.json) - .json file
 
 #### 3. List all NSG using `az list` command and send the output . What command did you use?
 
@@ -217,7 +217,7 @@ az vm show --resource-group Student-RG-1344553 --name WC-11 --output json > WC-1
 az network nsg list --output table > nsg_list.tbl
 ```
 
-- [nsg_list](Checkpoint7/assets/PART_C/nsg_list.tbl) - .tbl file
+- [nsg_list](https://github.com/150070217-myseneca/CSP451-Scripts/blob/main/Checkpoint7/assets/PART_C/nsg_list.tbl) - .tbl file
 
 #### 4. What is the time-zone? What should be the correct time settings considering the time zone differences?
 
